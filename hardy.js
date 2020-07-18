@@ -71,7 +71,8 @@ function fghOmega(base)
   }
   else
   {
-    return ExpantaNum("J" + base.toString())
+    base.layer += 1
+    return base;
   }
 }
 
