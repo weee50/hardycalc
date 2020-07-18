@@ -73,45 +73,53 @@ function calculate()
 
   document.getElementById("shortAnswer").innerHTML = "";
 
-  for (num of subOmegaNums.concat(omegaNums))
+  if (base < 0 || base % 1 != 0 || base == Infinity || isNaN(base))
   {
-    if (num < 0 || num % 1 != 0)
-    {
-      error = true;
-    }
-  }
-  if (error)
-  {
-    text = "Error: Your ordinal contains negatives or decimals."
+    text = "Error: The base must be a natural number.";
+    error = true;
   }
   else
   {
-    try
+    for (num of subOmegaNums.concat(omegaNums))
     {
-      result = hardyList(subOmegaNums, omegaNums, base)
-      if (result.eq(Infinity))
+      if (num < 0 || num % 1 != 0 || num == Infinity || isNaN(num))
       {
-        text = "Your result could not be displayed because it is greater than the limit of ExpantaNum.";
         error = true;
       }
-      else
+    }
+    if (error)
+    {
+      text = "Error: Your ordinal must be composed of entirely natural numbers."
+    }
+    else
+    {
+      try
       {
-        text = result.toString();
-        notated = notate(result)
-        if (text != notated)
+        result = hardyList(subOmegaNums, omegaNums, base)
+        if (result.eq(Infinity))
         {
-          document.getElementById("shortAnswer").innerHTML = notated;
-          text = "(Unrounded: " + text + ")";
+          text = "Error: Your result could not be displayed because it is greater than the limit of ExpantaNum.";
+          error = true;
+        }
+        else
+        {
+          text = result.toString();
+          notated = notate(result)
+          if (text != notated)
+          {
+            document.getElementById("shortAnswer").innerHTML = notated;
+            text = "(Unrounded: " + text + ")";
+          }
         }
       }
-    }
-    catch(err)
-    {
-      text = "Your numbers are too big! For best results, all numbers in the calculation should be less than 500.";
-      error = true;
+      catch(err)
+      {
+        text = "Error: Your numbers are too big! For best results, all numbers in the ordinal should be less than 1000.";
+        error = true;
+      }
     }
   }
-  
+
   document.getElementById("answer").innerText = text;
   if (error)
   {
