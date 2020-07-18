@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Hardy Hierarchy Calculator</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="ExpantaNum.js"></script>
+    <script src="hardy.js"></script>
+    <script src="ui.js"></script>
+    <script src="notation.js"></script>
+  </head>
+  <body>
+    <center>
+    <h1>Hardy Hierarchy Calculator<br></h1>
+    <h2 id="inputs">H<sub><span id="omega" style="display: none">ω<sup>ω+1</sup><input type="number" style="width: 1%" id="inputOmegaPlus1" value="0">+ω<sup>ω</sup><input type="number" style="width: 1%" id="inputOmega" value="0">+</span><span id="subOmega" display="inline"><input type="number" style="width: 1%" id="input0" value="0"></span></sub>(<input type="number" style="width: 1%" id="inputBase" value="10">)</h2>
+    <button onclick="addOrd()">Add Another Power of Omega</button> <button onclick="removeOrd()">Remove Highest Finite Power of Omega</button> <button onclick="addRemoveOmegas()">Add/Remove ω<sup>ω</sup> and ω<sup>ω+1</sup></button><br><br>
+    <button onclick="calculate()" style="font-size: 20px">Calculate</button><br><br>
+    <h2 id="shortAnswer"></h2>
+    <h2 id="answer"></h2><br><br>
+    <p>Note: This uses <a href="https://github.com/Naruyoko/ExpantaNum.js">ExpantaNum.js</a>, which was created by Naruyoko.</p>
+    <p><a href="changelog">Changelog</a></p>
+    </center>
+  </body>
+</html>

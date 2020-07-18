@@ -1,0 +1,49 @@
+body{
+	background: #000000
+}
+
+p{
+	font-family: "Courier New";
+	color: white;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+p.big{
+	font-size: 60px;
+}
+
+h1{
+	font-family: "Courier New";
+	color: white;
+}
+
+h1.nomargin{
+	margin-bottom: 0px;
+}
+
+h2{
+	font-family: "Courier New";
+	color: white;
+	margin-top: 0px;
+}
+
+a{
+	font-family: "Courier New"
+}
+
+a:link{
+	color: #bae6e5
+}
+
+a:visited{
+	color: #e6dcba
+}
+
+input{
+	min-width: 100px;
+}
+
+div{
+	display: inline;
+}
